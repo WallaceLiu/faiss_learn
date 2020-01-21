@@ -1,6 +1,6 @@
 import fire
 
-from tts.search import VectorSimilaritySearch, MinHashSimilaritySearch
+from text_similarity_search.tts.search import VectorSimilaritySearch, MinHashSimilaritySearch
 
 all_methods = [VectorSimilaritySearch, MinHashSimilaritySearch]
 
