@@ -1,0 +1,19 @@
+To Do
+
+Embedding Layer
+- base class
+- Bert Sentence
+- FLAIR Document 
+- Glove
+
+SemanticIndex
+IndexManager
+- Create Index
+- Delete Index
+- Load Index
+Index
+- Bulk Add
+- Single Add
+- Search
+- Delete
+

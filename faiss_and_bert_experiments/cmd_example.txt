@@ -1,0 +1,1 @@
+echo お前は死んでる | python tokesp.py | ./fv_example.sh
