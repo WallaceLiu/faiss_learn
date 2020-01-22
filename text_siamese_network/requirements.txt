@@ -1,5 +1,5 @@
-tensorflow==1.13.1
-matplotlib==2.1.2
+tensorflow
+matplotlib
 fasttext
 sklearn
 faiss
