@@ -43,7 +43,10 @@ Due to limitation in max file size in git, I haven't uploaded trained model in g
 To train on a different dataset, you have to build a dataset consisting of similar and dissimilar text pairs. Empirically, you need to have at least ~200k number of pairs to achieve excellent performance. Try to maintain a balance between similar and dissimilar pairs [50% - 50%] is a good choice. 
 
 
+## 备注
 
+解压 data_repository 目录的zip文件
+该demo只能在 tf 1.8 下可运行。
 
 
 
