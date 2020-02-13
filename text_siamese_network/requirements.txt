@@ -1,0 +1,5 @@
+tensorflow
+matplotlib
+fasttext
+sklearn
+faiss

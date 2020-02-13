@@ -1,0 +1,10 @@
+SQLAlchemy
+fastapi
+alembic
+psycopg2
+uvicorn
+faiss
+numpy
+matplotlib
+
+
