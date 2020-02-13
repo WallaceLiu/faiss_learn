@@ -55,7 +55,11 @@ class VectorSimilaritySearch(SimilaritySearch):
     def _init(self):
         import faiss
 
+<<<<<<< HEAD
         self.dim = self.source_data.shape[-1] # matrix, vector
+=======
+        self.dim = self.source_data.shape[-1]
+>>>>>>> 926a25b555fd996e7e0325154cf62662cf71088d
 
         if self.use_gpu:
             self.gpu_res = faiss.StandardGpuResources()
@@ -280,3 +284,7 @@ class MinHashSimilaritySearch(SimilaritySearch):
     @staticmethod
     def unwrap_self__process_search_result_batch(arg, **kwarg):
         return MinHashSimilaritySearch._process_search_result_batch(*arg, **kwarg)
+<<<<<<< HEAD
+=======
+
+>>>>>>> 926a25b555fd996e7e0325154cf62662cf71088d

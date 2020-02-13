@@ -2,8 +2,12 @@ import os
 from matplotlib.image import imread
 import numpy as np
 import pandas as pd
+<<<<<<< HEAD
 import tensorflow as tf
 # from tensorflow.contrib import learn
+=======
+from tensorflow.contrib import learn
+>>>>>>> 926a25b555fd996e7e0325154cf62662cf71088d
 import fasttext
 import numpy as np
 from sklearn.utils import shuffle
@@ -11,12 +15,20 @@ import re
 
 
 class PreProcessing:
+<<<<<<< HEAD
     def __init__(self, data_src):
 
         self.similar_pairs = self.build_corpus('./data_repository/questions.csv')
         self.embeddings_model = fasttext.train_unsupervised("./data_repository/text_corpus.txt", model='skipgram',
                                                             lr=0.005, dim=64,
                                                             ws=5, epoch=200)
+=======
+    def __init__(self,data_src):
+
+        self.similar_pairs = self.build_corpus('./data_repository/questions.csv')
+        self.embeddings_model = fasttext.train_unsupervised("./data_repository/text_corpus.txt", model='skipgram', lr=0.005, dim=64,
+                                            ws=5, epoch=200)
+>>>>>>> 926a25b555fd996e7e0325154cf62662cf71088d
         self.embeddings_model.save_model("./model_siamese_network/ft_skipgram_ws5_dim64.bin")
         print('FastText training finished successfully.')
         self.current_index = 0
@@ -27,7 +39,11 @@ class PreProcessing:
         wc_list = []
         wc_list.extend(wc_list_x)
         wc_list.extend(wc_list_y)
+<<<<<<< HEAD
         max_document_length = 16  # or use a constant like 16, select this parameter based on your understanding of what could be a good choice
+=======
+        max_document_length = 16                 # or use a constant like 16, select this parameter based on your understanding of what could be a good choice
+>>>>>>> 926a25b555fd996e7e0325154cf62662cf71088d
         number_of_elements = len(input_X)
         self.vocab_processor = learn.preprocessing.VocabularyProcessor(max_document_length)
         full_corpus = []
@@ -42,6 +58,7 @@ class PreProcessing:
                 pass
         self.embeddings_lookup = np.asarray(self.embeddings_lookup)
         self.vocab_processor.save('./model_siamese_network/vocab')
+<<<<<<< HEAD
         self.write_metadata(os.path.join('model_siamese_network', 'metadata.tsv'),
                             list(self.vocab_processor.vocabulary_._mapping))
         print('Vocab processor executed and saved successfully.')
@@ -50,6 +67,15 @@ class PreProcessing:
         self.label = list(self.similar_pairs['is_duplicate'])
 
     def preprocess(self, x):
+=======
+        self.write_metadata(os.path.join('model_siamese_network','metadata.tsv'),list(self.vocab_processor.vocabulary_._mapping))
+        print('Vocab processor executed and saved successfully.')
+        self.X = full_data[0:number_of_elements]
+        self.Y = full_data[number_of_elements:2*number_of_elements]
+        self.label = list(self.similar_pairs['is_duplicate'])
+
+    def preprocess(self,x):
+>>>>>>> 926a25b555fd996e7e0325154cf62662cf71088d
         try:
             tk_x = x.lower()
 
@@ -93,7 +119,11 @@ class PreProcessing:
         print('Text corpus generated and persisted successfully.')
         return similar_items
 
+<<<<<<< HEAD
     def write_metadata(self, filename, labels):
+=======
+    def write_metadata(self,filename, labels):
+>>>>>>> 926a25b555fd996e7e0325154cf62662cf71088d
         with open(filename, 'w') as f:
             f.write("Index\tLabel\n")
             for index, label in enumerate(labels):
@@ -104,5 +134,10 @@ class PreProcessing:
     def get_siamese_batch(self, n):
         last_index = self.current_index
         self.current_index += n
+<<<<<<< HEAD
         return self.X[last_index: self.current_index, :], self.Y[last_index: self.current_index, :], np.expand_dims(
             self.label[last_index: self.current_index], axis=1)
+=======
+        return self.X[last_index: self.current_index, :], self.Y[last_index: self.current_index, :], np.expand_dims(self.label[last_index: self.current_index], axis=1)
+
+>>>>>>> 926a25b555fd996e7e0325154cf62662cf71088d
