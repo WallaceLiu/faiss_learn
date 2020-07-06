@@ -35,3 +35,5 @@ pyspark --archives /Users/liuning11/.conda/envs/myfaiss/myfaiss.zip --conf spark
 - [similarity search](https://github.com/facebookresearch/faiss/wiki)
 - [Guidelines to choose an index](https://github.com/facebookresearch/faiss/wiki)
 - [Benchmarking scripts](https://github.com/facebookresearch/faiss/blob/master/benchs/README.md)
+
+# 欢迎打赏
